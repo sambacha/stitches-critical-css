@@ -1,4 +1,4 @@
-import type {Breakpoint, CssRule, StyleProperty, StyleValue} from '../css';
+import type {Breakpoint, CssRule, StyleProperty, StyleValue} from './libcss';
 import type {CSS} from './css';
 
 export const toValue = (value: StyleValue): string => {
