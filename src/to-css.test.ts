@@ -1,4 +1,4 @@
-import {type Breakpoint, type CssRule, initialBreakpoints} from '../css';
+import {type Breakpoint, type CssRule, initialBreakpoints} from './libcss';
 import {toCss} from './to-css';
 
 const breakpoints: Array<Breakpoint> = initialBreakpoints.map((breakpoint, index) => ({
@@ -7,7 +7,7 @@ const breakpoints: Array<Breakpoint> = initialBreakpoints.map((breakpoint, index
   projectId: 'projectId',
 }));
 
-describe('Convert WS CSS rules to stitches', () => {
+describe('Convert Tailwind CSS rules to stitches', () => {
   test('basic', () => {
     const cssRules: Array<CssRule> = [
       {
