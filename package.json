@@ -1,7 +1,7 @@
 {
-  "name": "stitches-css",
-  "version": "1.0.0",
-  "description": "",
+  "name": "stitches-critical-css",
+  "version": "0.0.1",
+  "description": "Stitches Critical CSS Loading",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -11,16 +11,16 @@
   ],
   "scripts": {
     "dev": "tsup src/index.ts --format esm,cjs --watch --out-dir=lib",
-    "build": "yarn build:mdn-data && yarn build:args && yarn build:lib",
+    "build": "yarn build:mdn-data && yarn build:lib",
     "build:mdn-data": "node --experimental-loader esbuild-node-loader ./bin/mdn-data.ts ./src/css",
     "build:args": "node --experimental-loader esbuild-node-loader ./bin/generate-arg-types.ts './src/components/*.tsx !./src/**/*.stories.tsx !./src/**/*.ws.tsx'",
     "typecheck": "tsc --noEmit",
     "build:lib": "rm -fr lib && tsc",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "sam bacha",
-  "license": "ISC",
+  "keywords": ["stitches", "critical css", "stitches react", "css in js"],
+  "author": "sam bacha <sam@manifoldfinance.com>",
+  "license": "UPL",
   "dependencies": {
     "@stitches/core": "^1.2.8",
     "immer": "^9.0.15",
