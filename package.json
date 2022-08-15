@@ -1,0 +1,48 @@
+{
+  "name": "stitches-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/*",
+    "README.md",
+    "!*.test.*"
+  ],
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm,cjs --watch --out-dir=lib",
+    "build": "yarn build:mdn-data && yarn build:args && yarn build:lib",
+    "build:mdn-data": "node --experimental-loader esbuild-node-loader ./bin/mdn-data.ts ./src/css",
+    "build:args": "node --experimental-loader esbuild-node-loader ./bin/generate-arg-types.ts './src/components/*.tsx !./src/**/*.stories.tsx !./src/**/*.ws.tsx'",
+    "typecheck": "tsc --noEmit",
+    "build:lib": "rm -fr lib && tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "sam bacha",
+  "license": "ISC",
+  "dependencies": {
+    "@stitches/core": "^1.2.8",
+    "immer": "^9.0.15",
+    "mitt": "^3.0.0",
+    "react-nano-state": "^0.4.0",
+    "zod": "^3.18.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@types/css-tree": "^1.0.7",
+    "@types/jest": "^28.1.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "css-tree": "^2.2.1",
+    "esbuild": "^0.14.54",
+    "esbuild-node-externals": "^1.4.1",
+    "esbuild-node-loader": "^0.8.0",
+    "jest": "^28.1.3",
+    "mdn-data": "^2.0.28",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "tsup": "^6.2.2",
+    "typescript": "^4.7.4"
+  }
+}
