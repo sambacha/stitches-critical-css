@@ -1,6 +1,6 @@
 import {type CSS, css as createCss, createStitches, globalCss} from '@stitches/core';
 
-import type {Breakpoint} from '../css';
+import type {Breakpoint} from './libcss';
 
 let media = {};
 
